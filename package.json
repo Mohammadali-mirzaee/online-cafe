@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Mohammadali-mirzaee/online-cafe/issues"
   },
-  "homepage": "https://github.com/Mohammadali-mirzaee/online-cafe#readme"
+  "homepage": "https://github.com/Mohammadali-mirzaee/online-cafe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0"
+  }
 }
