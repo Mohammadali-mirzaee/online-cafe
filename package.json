@@ -2,7 +2,7 @@
   "name": "kaffe",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Mohammadali-mirzaee/online-cafe.git"
   },
-  "author": "",
+  "author": "Mohammadali,Ivar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mohammadali-mirzaee/online-cafe/issues"
