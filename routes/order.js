@@ -1,9 +1,11 @@
-const { Router } = require('express');
+const { Router, request, response } = require('express');
 const lowdb = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('order.json')
 const database = lowdb(adapter);
 const router = new Router();
+
+const orderid = require('order-id')('mysecret')
 
 
 
@@ -15,14 +17,22 @@ router.post('/', (request, response) => {
     
     const orderItem = request.body;
     console.log('order att lägga till:', orderItem);
+    let d = new Date()
+    orderItem.ordertime = new Date().toLocaleString('SE',d);
+    orderItem.ordernummer = orderid.generate();
     const order = database.get('order').push(orderItem).write();
 
-    let result = {order}
+    let result = {}
 
     result.success = true;
+    result.order = order;
 
     response.json(result);
 });
+
+router.get('/:id', (request, response) => {
+    
+})
 
 
 module.exports = router
