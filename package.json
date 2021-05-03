@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Mohammadali-mirzaee/online-cafe#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "lowdb": "^1.0.0"
+    "lowdb": "^1.0.0",
+    "order-id": "^2.1.1"
   }
 }
