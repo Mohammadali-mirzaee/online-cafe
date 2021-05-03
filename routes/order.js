@@ -4,6 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('order.json')
 const database = lowdb(adapter);
 const router = new Router();
+const {initiateDatabase} = require('../server')
 
 const orderid = require('order-id')('mysecret')
 
@@ -14,7 +15,7 @@ database.defaults({ order: [] }).write();
 
 
 router.post('/', (request, response) => {
-    
+    const account = request.params.initiateDatabase
     const orderItem = request.body;
     console.log('order att lägga till:', orderItem);
     let d = new Date()

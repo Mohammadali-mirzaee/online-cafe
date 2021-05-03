@@ -3,6 +3,7 @@ const express = require('express')
 const menuRouter = require('./routes/coffee')
 const order = require('./routes/order')
 
+
 const app = express();
 
 app.use(express.json());
@@ -24,12 +25,12 @@ app.listen(5000, () => {
 
 
 
-// skapa konto
-const adapter2 = new FileSync('accounts.json');
-const accountsdatabase = lowdb(adapter2);
+// skapa accounts
+const adapter = new FileSync('accounts.json');
+const database = lowdb(adapter);
 
 function initiateDatabase() {
-    accountsdatabase.defaults({ accounts: [] }).write();
+    database.defaults({ accounts: [] }).write();
 };
 
 
@@ -46,7 +47,7 @@ const account = {
 
 // database.get('accounts').push(account).write();
 
-const accounts = accountsdatabase.get('accounts').value();
+const accounts = database.get('accounts').value();
 console.log('account-databasen innhåller:', JSON.stringify(accounts));
 
 
@@ -59,14 +60,3 @@ console.log('account-databasen innhåller:', JSON.stringify(accounts));
 //     },
 //     body: JSON.stringify(account)
 // })
-
-
-
-//Verifiera skapat konto/login
-app.post('/api/login', (request, response) => {
-    const loginCreds = request.body;
-    console.log('LoginCreds:', loginCreds);
-
-    const compareCreds = database.get(accounts).find({username: loginCreds.username, password: loginCreds.password}).value();
-    console.log('compare:',compareCreds);
-});
