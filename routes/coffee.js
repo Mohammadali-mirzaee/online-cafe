@@ -12,6 +12,6 @@ router.get('/', (request, response) => {
     const menu = database.get('menu').value()
     let result = {menu}
     response.json(result)
-})
+});
 
 module.exports = router;
