@@ -1,24 +1,17 @@
 // TEST TEST TEST TEST
 const express = require('express')
-const lowdb = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
+const menuRouter = require('./routes/coffee')
+const order = require('./routes/order')
 
-const adapter = new FileSync('menu.json')
-const database = lowdb(adapter);
 const app = express();
+
 app.use(express.json());
 
-database.defaults({ menu: [] }).write();
+app.use('/api/coffee', menuRouter);
+app.use('/api/order', order);
 
 
-app.get('/api/menu', (request, response) => {
-    const menu = database.get('menu').value()
 
-    let result = {menu}
-
-    response.json(result)
-    
-})
 
 app.listen(5000, () => {
     console.log("server started")
