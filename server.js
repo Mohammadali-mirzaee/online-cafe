@@ -31,12 +31,12 @@ app.listen(5000, () => {
 
 
 
-// skapa accounts
-const adapter = new FileSync('accounts.json');
-const database = lowdb(adapter);
+// skapa konto
+const adapter2 = new FileSync('accounts.json');
+const accountsdatabase = lowdb(adapter2);
 
 function initiateDatabase() {
-    database.defaults({ accounts: [] }).write();
+    accountsdatabase.defaults({ accounts: [] }).write();
 };
 
 
@@ -53,7 +53,7 @@ const account = {
 
 // database.get('accounts').push(account).write();
 
-const accounts = database.get('accounts').value();
+const accounts = accountsdatabase.get('accounts').value();
 console.log('account-databasen innhåller:', JSON.stringify(accounts));
 
 
@@ -66,3 +66,14 @@ console.log('account-databasen innhåller:', JSON.stringify(accounts));
 //     },
 //     body: JSON.stringify(account)
 // })
+
+
+
+//Verifiera skapat konto/login
+app.post('/api/login', (request, response) => {
+    const loginCreds = request.body;
+    console.log('LoginCreds:', loginCreds);
+
+    const compareCreds = database.get(accounts).find({username: loginCreds.username, password: loginCreds.password}).value();
+    console.log('compare:',compareCreds);
+});
