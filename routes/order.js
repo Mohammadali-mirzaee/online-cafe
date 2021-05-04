@@ -4,7 +4,10 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('order.json')
 const database = lowdb(adapter);
 const router = new Router();
-const {initiateDatabase} = require('../server')
+const fs = require('fs');
+let account = fs.readFileSync('./accounts.json')
+
+/* console.log('hej',user.User) */
 
 const orderid = require('order-id')('mysecret')
 
@@ -15,12 +18,13 @@ database.defaults({ order: [] }).write();
 
 
 router.post('/', (request, response) => {
-    const account = request.params.initiateDatabase
+
     const orderItem = request.body;
     console.log('order att lägga till:', orderItem);
     let d = new Date()
     orderItem.ordertime = new Date().toLocaleString('SE',d);
     orderItem.ordernummer = orderid.generate();
+    orderItem.user = JSON.parse(account);
     const order = database.get('order').push(orderItem).write();
 
     let result = {}

@@ -1,71 +1,12 @@
 {
   "order": [
     {
-      "caffe": "latte",
-      "ordertime": "5/2/2021, 1:20:43 AM",
-      "id": "6367-766051-1358"
-    },
-    {
-      "caffe": "latte",
-      "ordertime": "2021-05-02 22:45:32",
-      "id": "6367-788110-5415"
-    },
-    {
-      "caffe": "brygg",
-      "ordertime": "2021-05-02 22:49:58",
-      "id": "6367-788978-0611"
-    },
-    {
-      "caffe": "brygg",
-      "ordertime": "2021-05-02 22:52:03",
-      "ordernummer": "6367-788401-6178"
-    },
-    {
-      "caffe": "brygg",
-      "ordertime": "2021-05-03 11:47:15",
-      "ordernummer": "6302-219019-8245"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 11:47:24",
-      "ordernummer": "6302-219055-1870"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 11:48:46",
-      "ordernummer": "6302-219103-6208"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 11:48:46",
-      "ordernummer": "6302-219103-6334"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 16:04:43",
-      "ordernummer": "6302-292381-5129"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 16:05:40",
-      "ordernummer": "6302-292452-2401"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 16:05:40",
-      "ordernummer": "6302-292452-2483"
-    },
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 16:05:58",
-      "ordernummer": "6302-292498-9561"
-    },
-    null,
-    {
-      "caffe": "kokt",
-      "ordertime": "2021-05-03 16:05:58",
-      "ordernummer": "6302-292498-3208"
-    },
-    null
+      "coffe": "bryg",
+      "ordertime": "2021-05-04 00:56:50",
+      "ordernummer": "6302-280362-7240",
+      "user": {
+        "User": "Momo"
+      }
+    }
   ]
 }
