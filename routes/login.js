@@ -1,4 +1,4 @@
-const { Router } = require('express');
+/* const { Router } = require('express');
 const lowdb = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('menu.json')
@@ -16,4 +16,4 @@ router.post('/api/login', (request, response) => {
 });
 
 
-module.exports = router
+module.exports = router */

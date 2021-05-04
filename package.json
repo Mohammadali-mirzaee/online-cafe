@@ -18,8 +18,9 @@
   "homepage": "https://github.com/Mohammadali-mirzaee/online-cafe#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "generate-password": "^1.6.0",
     "lowdb": "^1.0.0",
-    "nanoid": "^2.1.9",
+    "nanoid": "^3.1.22",
     "order-id": "^2.1.1"
   }
 }

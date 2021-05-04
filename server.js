@@ -12,8 +12,8 @@ app.use(express.json());
 
 app.use('/api/coffee', menuRouter);
 app.use('/api/order', order);
-app.use('/api/signup', signup)
-app.use('/api/login', login)
+app.use('/api/accounts', signup)
+/* app.use('/api/login', login) */
 
 
 //  function initiateDatabase() {
