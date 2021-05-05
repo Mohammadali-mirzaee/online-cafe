@@ -15,17 +15,12 @@ var password = generator.generate({
 database.defaults({ accounts: [] }).write();
 
 // skapa konto
-
-
 router.post('/', (request, response) => {
    const accountItem = request.body;
     accountItem.id = nanoid(); 
     accountItem.password = password;
-   console.log('Konto att lägga till:', accountItem);
-/*     accounts.push(accountItem)
- */const user = database.get('accounts').push(accountItem).write();
-/*     const accounts = accountsdatabase.get('accounts').value();
- */
+    console.log('Konto att lägga till:', accountItem);
+    const user = database.get('accounts').push(accountItem).write();
     console.log('account-databasen innhåller:', JSON.stringify(user));
     
     
@@ -33,17 +28,14 @@ router.post('/', (request, response) => {
     result.user = user
     response.json(result);
 
-}) 
+})
 
-/* const account = {
-    username: 'Test',
-    email: 'test@test.se',
-    password: '12345'
-} */
+router.get('/', (request, response) => {
+    const account =  database.get('accounts').value();
+    let result = {};
+    response.json(account)  
 
-/* database.get('accounts').push(account).write();
- */
-
+})
 
 
 module.exports = router
