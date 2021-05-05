@@ -1,7 +1,7 @@
 const { Router, request, response } = require('express');
 const lowdb = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('accounts.json');
+const adapter = new FileSync('order.json');
 const database = lowdb(adapter);
 const router = new Router();
 const { nanoid } = require('nanoid');
