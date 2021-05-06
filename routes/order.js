@@ -36,7 +36,7 @@ router.get('/:id', (request, response) => {
     let ordeDone = []
     const userID = request.params.id;
     const orders = database.get('order').filter({ userID: userID }).value();
-
+    const currentDate = new Date();
     let result = {};
 
     response.json(orders)  
