@@ -18,7 +18,7 @@ router.post('/', (request, response) => {
     orderItem.ordertime = new Date().toLocaleString('SE',d);
     orderItem.ordernummer = orderid.generate();
     a = Math.random() * 15;
-    orderItem.timeleft =  Math.floor(a)+1
+    orderItem.ETA =  Math.floor(a)+1
     
     database.get('accounts').filter({userID:orderItem.userID}).value();
     const order = database.get('order').push(orderItem).write();
@@ -33,9 +33,10 @@ router.post('/', (request, response) => {
 });
 
 router.get('/:id', (request, response) => {
-
+    let ordeDone = []
     const userID = request.params.id;
-    const orders =  database.get('order').filter({ userID:userID }).value();
+    const orders = database.get('order').filter({ userID: userID }).value();
+
     let result = {};
 
     response.json(orders)  

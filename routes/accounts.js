@@ -23,11 +23,34 @@ router.post('/', (request, response) => {
     const user = database.get('accounts').push(accountItem).write();
     console.log('account-databasen innhåller:', JSON.stringify(user));
     
+    /* const result = {
+        
+      }
     
-    let result = {};
+      //Om användarnamnet redan finns i databasen
+      if (usernameExists) {
+        result.usernameExists = true;
+      }
+    
+      //Om e-post redan finns i databasen
+      if (emailExists) {
+        result.emailExists = true;
+      }
+    
+      if (!result.usernameExists && !result.emailExists) {
+        database.get('accounts').push(account).write();
+        result.success = true;
+    }
+    
+    let result = {
+        success: false,
+        usernameExists: false,
+        emailExists: false  
+    };
+    
     result.user = user
     response.json(result);
-
+ */
 })
 
 router.get('/', (request, response) => {
